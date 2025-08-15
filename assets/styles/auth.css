@@ -1,0 +1,490 @@
+*,*::after,*::before {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+@font-face {
+font-family: "INTER";
+src: url("../fonts/Inter/Inter-VariableFont_opsz\,wght.ttf");
+}
+
+:root{
+/*colors */
+--flame_Orange:hsl(18, 100%,60%);
+--deep_navy_blue:hsl(215, 49%,25%);
+--warm_yelow:hsl(42, 100%,50%);
+--steel_gray:hsl(210, 10%,60%);
+--cool_light_gray:hsl(210, 20%,95%);
+--white_smook:hsl(29, 6%, 90%);  /*main background color*/
+--text_gray:hsl(0, 0%,40%);
+--charcoal:hsl(0, 0%,20);
+--success_green:hsl(140, 60%,45%);
+--warning_yellow:hsl(45, 100%,50%);
+--error_red:hsl(0, 80%,60%);
+--infor_blue:hsl(200, 100%,50%);
+--primary: #4361ee;
+--secondary: #3f37c9;
+--accent: #4cc9f0;
+
+--light: #f8f9fa;
+--success: #4ade80;
+--warning: #fbbf24;
+--danger: #f87171;
+
+/* Typography */
+--text_base:16px;
+--sans_serif:"INTER", sans-serif;
+/* font weight */
+--font_bold:700;
+--font_semibold:600;
+--font_regular:400;
+--font_light:300;
+
+/* box Shadows */
+box-shadow: 0 4px 12px hsla(215, 49%, 25%, 0.08); /*card*/
+box-shadow: 0 8px 24px hsla(215, 49%, 25%, 0.15); /*modal or login*/
+
+box-shadow: 0 6px 16px hsla(18, 100%, 60%, 0.12); /*button on hover etc*/
+box-shadow: inset 0 2px 4px hsla(0, 0%, 0%, 0.05); /*input focus*/ 
+
+} 
+
+body {
+background:var(--white_smook);
+color: var(--charcoal);
+overflow-x: hidden;
+}
+
+/* Mobile First Layout */
+.dashboard-container {
+display: flex;
+flex-direction: column;
+min-height: 100vh;
+}
+
+/* Mobile Header */
+.mobile-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 15px;
+background: var(--cool_light_gray);
+box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+position: sticky;
+top: 0;
+z-index: 50;
+}
+
+.menu-toggle {
+font-size: 20px;
+cursor: pointer;
+color: var(--deep_navy_blue);
+}
+
+/* Sidebar */
+.sidebar {
+background: var(--cool_light_gray);
+box-shadow: 2px 0 10px rgba(0,0,0,0.05);
+position: fixed;
+width: 240px;
+height: 100vh;
+left: -240px;
+top: 0;
+z-index: 100;
+transition: all 0.3s ease;
+}
+
+
+.sidebar.active {
+left: 0;
+}
+
+.brand {
+padding: 20px;
+display: flex;
+align-items: center;
+gap: 10px;
+border-bottom: 1px solid rgba(0,0,0,0.05);
+background-color: var(--deep_navy_blue);
+color: var(--cool_light_gray);
+}
+
+.brand-logo img{
+width: 30px;
+height: 30px;
+background: var(--white_smook);
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+color: var(--cool_light_gray);
+}
+
+.nav-menu {
+padding: 20px 0;
+}
+
+.nav-item {
+padding: 12px 20px;
+margin: 5px 0;
+display: flex;
+align-items: center;
+gap: 12px;
+color: var(--deep_navy_blue);
+text-decoration: none;
+transition: all 0.3s ease;
+position: relative;
+}
+
+.nav-item:hover, .nav-item.active {
+color: var(--deep_navy_blue);
+background: rgba(67, 97, 238, 0.05);
+}
+
+.nav-item:hover::before, .nav-item.active::before {
+content: '';
+position: absolute;
+left: 0;
+top: 0;
+height: 100%;
+width: 3px;
+background: var(--deep_navy_blue);
+}
+
+/* Main Content */
+.main-content {
+padding: 20px;
+flex: 1;
+}
+
+.greeting h1 {
+font-size: 22px;
+margin-bottom: 5px;
+}
+
+.greeting p {
+color: #64748b;
+font-size: 14px;
+}
+
+.user-avatar {
+width: 40px;
+height: 40px;
+border-radius: 50%;
+background: var(--deep_navy_blue);
+color: white;
+display: flex;
+align-items: center;
+justify-content: center;
+font-weight: 600;
+}
+
+/* Stats Cards */
+.stats-grid {
+display: grid;
+grid-template-columns: 1fr;
+gap: 15px;
+margin: 20px 0;
+}
+
+.stat-card {
+background: white;
+border-radius: 10px;
+padding: 15px;
+box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+transition: transform 0.3s ease;
+border-left: 4px solid;
+}
+
+.stat-card:hover {
+transform: translateY(-3px);
+}
+
+.stat-card.pending {
+border-color: var(--warning_yellow);
+}
+
+.stat-card.assigned {
+border-color: var(--infor_blue);
+}
+
+.stat-card.delivered {
+border-color: var(--success_green);
+}
+
+.stat-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 10px;
+}
+
+.stat-icon {
+width: 40px;
+height: 40px;
+border-radius: 8px;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 18px;
+}
+
+.stat-icon.pending {
+background: rgba(251, 191, 36, 0.1);
+color: var(--warning_yellow);
+}
+
+.stat-icon.assigned {
+background: rgba(76, 201, 240, 0.1);
+color: var(--infor_blue);
+}
+
+.stat-icon.delivered {
+background: rgba(74, 222, 128, 0.1);
+color: var(--success_green);
+}
+
+.stat-value {
+font-size: 24px;
+font-weight: 600;
+margin: 5px 0;
+}
+
+.stat-title {
+color: #64748b;
+font-size: 14px;
+}
+
+/* Orders Section */
+.section-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin: 25px 0 15px;
+}
+
+.section-title {
+font-size: 18px;
+font-weight: 600;
+}
+
+.view-all {
+color: var(--flame_Orange);
+font-size: 14px;
+text-decoration: none;
+}
+
+/* Orders Table (Desktop) */
+.orders-table {
+width: 100%;
+border-collapse: collapse;
+display: none;
+background: white;
+border-radius: 10px;
+overflow: hidden;
+box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.orders-table th, .orders-table td {
+padding: 12px 15px;
+text-align: left;
+}
+
+.orders-table th {
+background: #f8f9fa;
+color: #64748b;
+font-weight: 500;
+}
+
+.orders-table tr:not(:last-child) {
+border-bottom: 1px solid #eee;
+}
+
+.order-id {
+color: var(--flame_Orange);
+font-weight: 500;
+}
+
+/* Order Cards (Mobile) */
+.order-cards {
+display: block;
+}
+
+.order-card {
+background: var(--cool_light_gray);
+border-radius: 10px;
+padding: 15px;
+margin-bottom: 15px;
+box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.card-row {
+display: flex;
+justify-content: space-between;
+margin-bottom: 8px;
+}
+
+.status-badge {
+padding: 5px 10px;
+border-radius: 20px;
+font-size: 12px;
+font-weight: 500;
+}
+
+.status-pending {
+background: rgba(251, 191, 36, 0.1);
+color: var(--warning_yellow);
+}
+
+.status-assigned {
+background: rgba(76, 201, 240, 0.1);
+color: var(--infor_blue);
+}
+
+.status-delivered {
+background: rgba(74, 222, 128, 0.1);
+color: var(--success_green);
+}
+
+.assign-btn {
+background: var(--flame_Orange);
+color: white;
+border: none;
+padding: 8px 15px;
+border-radius: 5px;
+font-size: 14px;
+cursor: pointer;
+width: 100%;
+margin-top: 10px;
+transition: background 0.3s;
+}
+
+.assign-btn:hover {
+background: var(--deep_navy_blue);
+}
+
+/* Modal */
+.modal-overlay {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background: rgba(0,0,0,0.5);
+z-index: 200;
+justify-content: center;
+align-items: center;
+}
+
+.modal-content {
+background: white;
+padding: 20px;
+border-radius: 10px;
+width: 90%;
+max-width: 400px;
+}
+
+.modal-title {
+margin-bottom: 15px;
+font-size: 18px;
+}
+
+.modal-select {
+width: 100%;
+padding: 10px;
+border: 1px solid #ddd;
+border-radius: 5px;
+margin-bottom: 15px;
+}
+
+.modal-actions {
+display: flex;
+gap: 10px;
+}
+
+.modal-btn {
+flex: 1;
+padding: 10px;
+border-radius: 5px;
+cursor: pointer;
+border: none;
+}
+
+.modal-cancel {
+background: #e2e8f0;
+}
+
+.modal-confirm {
+background: var(--flame_Orange);
+color: white;
+}
+
+/* Animations */
+@keyframes fadeIn {
+from { opacity: 0; transform: translateY(10px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+.stat-card {
+animation: fadeIn 0.5s ease forwards;
+}
+
+.stat-card:nth-child(1) { animation-delay: 0.1s; }
+.stat-card:nth-child(2) { animation-delay: 0.2s; }
+.stat-card:nth-child(3) { animation-delay: 0.3s; }
+
+/* Desktop Styles */
+@media (min-width: 768px) {
+.dashboard-container {
+    flex-direction: row;
+}
+
+.mobile-header {
+    display: none;
+}
+
+.sidebar {
+    position: relative;
+    left: 0;
+    height: auto;
+}
+
+.main-content {
+    padding: 30px;
+}
+
+.stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.orders-table {
+    display: table;
+}
+
+.order-cards {
+    display: none;
+}
+}
+/* additional style */
+/* Add to your CSS */
+.orders-table td {
+    vertical-align: top;
+    padding: 12px 8px;
+}
+
+.order-card .card-row {
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+/* For the product lists */
+.product-list {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.product-list div {
+    padding: 2px 0;
+}

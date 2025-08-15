@@ -1,0 +1,170 @@
+
+*,*::after,*::before {
+    margin: 0;
+    padding: 0;
+  box-sizing: border-box;
+}
+@font-face {
+    font-family: "INTER";
+    src: url("../fonts/Inter/Inter-VariableFont_opsz\,wght.ttf");
+}
+
+:root{
+    /*colors */
+    --flame_Orange:hsl(18, 100%,60%);
+    --deep_navy_blue:hsl(215, 49%,25%);
+    --warm_yelow:hsl(42, 100%,50%);
+    --steel_gray:hsl(210, 10%,60%);
+    --cool_light_gray:hsl(210, 20%,95%);
+    --white_smook:hsl(29, 6%, 90%);  /*main background color*/
+    --text_gray:hsl(0, 0%,40%);
+    --charcoal:hsl(0, 0%,20);
+    --success_green:hsl(140, 60%,45%);
+    --warning_yellow:hsl(45, 100%,50%);
+    --error_red:hsl(0, 80%,60%);
+    --infor_blue:hsl(200, 100%,50%);
+
+    /* Typography */
+    --text_base:16px;
+    --sans_serif:"INTER", sans-serif;
+    /* font weight */
+    --font_bold:700;
+    --font_semibold:600;
+    --font_regular:400;
+    --font_light:300;
+
+    /* box Shadows */
+    --box-shadow1: 0 4px 12px hsla(215, 49%, 25%, 0.08); /*card*/
+    --box-shadow2: 0 8px 24px hsla(215, 49%, 25%, 0.15); /*modal or login*/
+
+    --box-shadow3: 0 6px 16px hsla(18, 100%, 60%, 0.12); /*button on hover etc*/
+    --box-shadow4: inset 0 2px 4px hsla(0, 0%, 0%, 0.05); /*input focus*/ 
+
+}
+body {
+    font-family: var(--sans_serif);
+    font-size: var(--text_base);
+    background-color: var(--cool_light_gray);
+    min-height: 100vh;
+    }
+form{
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    background-color: var(--white_smook);
+    padding: 30px;
+    border-radius: 15px;
+   
+   
+}
+main{
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    margin: 2rem;
+}
+input{
+    padding: 1rem ;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    width: 100%;
+    border: 1px solid var(--box-shadow4);
+}
+input::placeholder{
+    color: var(--Red500);
+}
+input:focus{
+   background-color: var(--box-shadow4);
+}
+.error-icon {
+     top:-65PX;
+     right: -300px;
+     width: 20px;
+     height: 20px;
+     position:relative;
+     transform: translateY(-50%);
+    
+     }
+.error-icon{
+        animation: shake 0.3s ease-in-out;
+     }
+ @keyframes shake {
+        0%{transform: translateX(0);}
+         25%{transform: translateX(-3px);}
+          50%{transform: translateX(3px);}
+           75%{transform: translateX(-3px);}
+            100%{transform: translateX(0);}
+}
+
+select{
+    width: 90%;
+    padding: 12px;
+    border-radius: 7px;
+}
+.client_form {
+     position: relative;
+    margin-bottom: 10px;
+    width: 100%;
+}
+.gen{
+    width: 100%;
+}
+
+.hidden {
+    display: none;
+}
+
+.invalid {
+    border: 1px solid red;
+    outline: 1px solid red;
+    color: red;
+}
+.invalid{
+    border: 2px solid var(--Red500);
+}
+.invalid:focus{
+    outline: 2px solid var(--Red500);
+}
+.error {
+    color : var(--error_red);
+    text-align: start;
+}
+button{
+    padding:  15px 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    top: -3px;
+    right: -2px;
+    background-color: var(--flame_Orange);
+    text-align: center;
+    transition: all 350ms ease-in-out;
+    cursor: pointer;
+    display: inline-block;
+    width: 100%;
+    font-size: var(--text-base);
+    font-family: "INTER",sans-serif;
+    font-weight: var(--font-semibold);
+    margin-bottom:  20px;
+    border:none;
+    text-transform: uppercase;
+}
+
+button:hover{
+    background-color: var(--deep_navy_blue);
+    opacity: 0.8;
+    color: var(--white_smook);
+    box-shadow: 5px 4px 20px 0 var(--white_smook);
+}
+/* target large screen */
+@media screen and (min-width: 760px) {
+    main{
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        
+    }
+
+
+    
+}

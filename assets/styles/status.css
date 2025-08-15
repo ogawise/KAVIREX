@@ -1,0 +1,189 @@
+*,*::after,*::before {
+    margin: 0;
+    padding: 0;
+  box-sizing: border-box;
+}
+@font-face {
+    font-family: "INTER";
+    src: url("../fonts/Inter/Inter-VariableFont_opsz\,wght.ttf");
+}
+
+:root{
+    /*colors */
+    --flame_Orange:hsl(18, 100%,60%);
+    --deep_navy_blue:hsl(215, 49%,25%);
+    --warm_yelow:hsl(42, 100%,50%);
+    --steel_gray:hsl(210, 10%,60%);
+    --cool_light_gray:hsl(210, 20%,95%);
+    --white_smook:hsl(29, 6%, 90%);  /*main background color*/
+    --text_gray:hsl(0, 0%,40%);
+    --charcoal:hsl(0, 0%,20);
+    --success_green:hsl(140, 60%,45%);
+    --warning_yellow:hsl(45, 100%,50%);
+    --error_red:hsl(0, 80%,60%);
+    --infor_blue:hsl(200, 100%,50%);
+
+    /* Typography */
+    --text_base:16px;
+    --sans_serif:"INTER", sans-serif;
+    /* font weight */
+    --font_bold:700;
+    --font_semibold:600;
+    --font_regular:400;
+    --font_light:300;
+
+    /* box Shadows */
+    --box-shadow1: 0 4px 2px hsla(135, 8%, 9%, 0.08); /*card*/
+    --box-shadow2: 0 8px 24px hsla(215, 49%, 25%, 0.15); /*modal or login*/
+
+    --box-shadow3: 0 6px 16px hsla(18, 100%, 60%, 0.12); /*button on hover etc*/
+    --box-shadow4: inset 0 2px 4px hsla(0, 0%, 0%, 0.05); /*input focus*/ 
+
+}
+body {
+    font-family: var(--sans_serif);
+    font-size: var(--text_base);
+    color: var(--text_gray);
+    background-color: var(--white_smook);
+    min-height: 100vh;
+}
+
+
+.status-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+} */
+
+.refresh-info {
+    background: #e3f2fd;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.status-badge {
+    padding: 8px 16px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 25px;
+    font-weight: var(--font_bold);
+    text-transform: uppercase;
+    color: var(--cool_light_gray);
+}
+
+.status-badge.pending { background: var(--warning_yellow); color: var(--steel_gray); }
+.status-badge.assigned { background: var(--infor_blue); }
+.status-badge.on_transit { background: var(--warm_yelow); }
+.status-badge.delivered { background: var(--success_green); }
+
+.status-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+.status-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    margin: 1rem 0;
+    font-weight: bold;
+}
+
+.timeline {
+    position: relative;
+    margin: 2rem 0;
+     padding-left: 30px;
+}
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--cool_light_gray);
+    z-index: 1;
+}
+.step {
+    position: relative;
+    margin-bottom: 2rem;
+}
+.step.active .dot {
+    background: var(--success_green);
+    border-color:green;
+}
+.step.active .label {
+    font-weight:var(--font_bold);
+      margin-bottom: 0.3rem;
+}
+.dot {
+    position: absolute;
+    left: -30px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--cool_light_gray);
+    border: 2px solid #ddd;
+    z-index: 2;
+}
+.driver-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1.5rem 0;
+}
+.update-history {
+    margin-top: 2rem;
+}
+
+.update-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.order-items {
+    margin: 1.5rem 0;
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+   column-gap: 2rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 1.5rem;
+    color: #007bff;
+    text-decoration: none;
+}
+.picture{
+    width:150px;
+    border-radius:10px;
+}      
+
+.label {
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+}
+
+.time {
+    color: #666;
+    font-size: 0.9rem;
+}
+

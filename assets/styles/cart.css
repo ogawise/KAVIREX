@@ -1,0 +1,201 @@
+*,*::after,*::before {
+    margin: 0;
+    padding: 0;
+  box-sizing: border-box;
+}
+@font-face {
+    font-family: "INTER";
+    src: url("../fonts/Inter/Inter-VariableFont_opsz\,wght.ttf");
+}
+
+:root{
+    /*colors */
+    --flame_Orange:hsl(18, 100%,60%);
+    --deep_navy_blue:hsl(215, 49%,25%);
+    --warm_yelow:hsl(42, 100%,50%);
+    --steel_gray:hsl(210, 10%,60%);
+    --cool_light_gray:hsl(210, 20%,95%);
+    --white_smook:hsl(29, 6%, 90%);  /*main background color*/
+    --text_gray:hsl(0, 0%,40%);
+    --charcoal:hsl(0, 0%,20);
+    --success_green:hsl(140, 60%,45%);
+    --warning_yellow:hsl(45, 100%,50%);
+    --error_red:hsl(0, 80%,60%);
+    --infor_blue:hsl(200, 100%,50%);
+
+    /* Typography */
+    --text_base:16px;
+    --sans_serif:"INTER", sans-serif;
+    /* font weight */
+    --font_bold:700;
+    --font_semibold:600;
+    --font_regular:400;
+    --font_light:300;
+
+    /* box Shadows */
+    --box-shadow1: 0 4px 2px hsla(135, 8%, 9%, 0.08); /*card*/
+    --box-shadow2: 0 8px 24px hsla(215, 49%, 25%, 0.15); /*modal or login*/
+
+    --box-shadow3: 0 6px 16px hsla(18, 100%, 60%, 0.12); /*button on hover etc*/
+    --box-shadow4: inset 0 2px 4px hsla(0, 0%, 0%, 0.05); /*input focus*/ 
+
+}
+body {
+    font-family: var(--sans_serif);
+    font-size: var(--text_base);
+    color: var(--text_gray);
+    background-color: var(--white_smook);
+    min-height: 100vh;
+
+}
+
+h1{
+    margin: 1rem 0 0 2rem;
+    text-align: center;
+}
+#p1{
+    display: block;
+    margin: 0 0 0 1.3rem;
+    a{
+        text-decoration: underline;
+    }
+}
+
+.cart-container {
+    margin: 0 1.8rem;
+      display: grid ;
+    grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+    gap: 1.2rem;
+    padding: 1.2rem;
+}
+
+
+.cart-item{
+    background-color: var(--cool_light_gray);
+    border: 1px solid var(--steel_gray);
+    box-shadow: var(--box-shadow3);
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    img{
+        max-width: 100%;
+        height:100px;
+        object-fit: contain;
+    }
+}
+.item-details{
+    margin: 0.4rem;
+    .price{
+        color: var(--infor_blue);
+        margin-top: 2px;
+    }
+}
+.qty-controls{
+    margin-bottom: 4px;
+    .qty-input{
+        width: 40px;
+        
+    }
+    button{
+        background-color: var(--warm_yelow);
+        border-radius: 8px;
+        padding: 3px;
+        border: none;
+        color: var(--white_smook);
+      
+    }
+
+}
+.remove-btn{
+    margin-bottom: 6px;
+    background-color: var(--error_red);
+    border: none;
+    padding: 4px;
+    border-radius: 5px;
+}
+.subtotal{
+    color: var(--infor_blue);
+    text-decoration: underline;
+}
+.cart_total{
+    text-align: center;
+    font-size: 24px;
+    font-weight: var(--font_bold);
+    color: var(--infor_blue);
+    text-decoration: underline;
+}
+.action{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    a:hover{
+        color: var(--steel_gray);
+    }
+}
+
+.checkout-btn{
+    background-color: var(--flame_Orange);
+    padding: 8px;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    color: var(--white_smook);
+}
+.alert_error_message{
+  display:none;
+  color: var(--error_red);
+  text-decoration: underline;
+  font-weight: var(--font_regular);
+  font-style: italic;
+        
+}
+.cart-item {
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.remove-btn {
+    cursor: pointer;
+    background: var(--error_red);
+    color: var(--white_smook);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.remove-btn:hover {
+    background: #cc0000;
+}
+
+.qty-btn {
+    cursor: pointer;
+    background: var(--cool_light_gray);
+    border: 1px solid var(--steel_gray);
+    width: 25px;
+    height: 25px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+}
+
+.qty-btn:hover {
+    background: var(--white_smook);
+}
+@media screen and (min-width:600px) {
+
+    .action{
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        a{
+            margin:7px;
+        }
+    }
+    h1{
+        text-align: start;
+        margin-left: 4rem;
+    }
+}

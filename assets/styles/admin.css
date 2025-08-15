@@ -1,0 +1,42 @@
+*,*::after,*::before {
+    margin: 0;
+    padding: 0;
+  box-sizing: border-box;
+}
+@font-face {
+    font-family: "INTER";
+    src: url("../fonts/Inter/Inter-VariableFont_opsz\,wght.ttf");
+}
+
+:root{
+    /*colors */
+    --flame_Orange:hsl(18, 100%,60%);
+    --deep_navy_blue:hsl(215, 49%,25%);
+    --warm_yelow:hsl(42, 100%,50%);
+    --steel_gray:hsl(210, 10%,60%);
+    --cool_light_gray:hsl(210, 20%,95%);
+    --white_smook:hsl(29, 6%, 90%);  /*main background color*/
+    --text_gray:hsl(0, 0%,40%);
+    --charcoal:hsl(0, 0%,20);
+    --success_green:hsl(140, 60%,45%);
+    --warning_yellow:hsl(45, 100%,50%);
+    --error_red:hsl(0, 80%,60%);
+    --infor_blue:hsl(200, 100%,50%);
+
+    /* Typography */
+    --text_base:16px;
+    --sans_serif:"INTER", sans-serif;
+    /* font weight */
+    --font_bold:700;
+    --font_semibold:600;
+    --font_regular:400;
+    --font_light:300;
+
+    /* box Shadows */
+    box-shadow: 0 4px 12px hsla(215, 49%, 25%, 0.08); /*card*/
+    box-shadow: 0 8px 24px hsla(215, 49%, 25%, 0.15); /*modal or login*/
+
+    box-shadow: 0 6px 16px hsla(18, 100%, 60%, 0.12); /*button on hover etc*/
+    box-shadow: inset 0 2px 4px hsla(0, 0%, 0%, 0.05); /*input focus*/ 
+
+}
