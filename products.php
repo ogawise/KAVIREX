@@ -14,7 +14,7 @@
     <?php include('includes/header.php'); ?>
     <?php include('includes/database.php');?>
 
-    <main style="  min-height: 70vh;">
+    <main style="  min-height: 75vh;">
         <section class="product_c">
             <h1>Choose your favorite gas cylinder</h1>
             <div class="product_grid">

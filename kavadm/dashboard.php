@@ -287,7 +287,7 @@ $drivers = $connection->query("SELECT * FROM drivers WHERE is_available = 1");
        (<a href="#" onclick="location.reload();return false;">refresh now</a>)</p>
 </div>
     <script>
-     const refreshInterval = 30; // seconds
+     const refreshInterval = 60; // seconds
     let timeLeft = refreshInterval;
 
     function updateRefreshUI() {
