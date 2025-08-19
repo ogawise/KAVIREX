@@ -1,10 +1,6 @@
 document.addEventListener("DOMContentLoaded", function(){
-    
-    event.preventDefault();
+
 const form = document.querySelector('#login');
-// const inputuserName = document.querySelector("#userName");
-// const uNerrorMessage = document.querySelector("#uNerrorMessage");
-// const uNerrorIcon = document.querySelector("#uNerrorIcon");
 const inputemail = document.querySelector("#email");
 const eAerrorMessage = document.querySelector("#eAerrorMessagee");
 const e_errorIcon = document.querySelector("#e_errorIcon");

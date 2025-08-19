@@ -59,7 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
     // Hash the password
     $passwordHash = password_hash($password, PASSWORD_DEFAULT);
     
-    // Use prepared statement to prevent SQL injection
+    // insert into DB
     $query = "INSERT INTO users (fullName, Address, email, phoneNumber, password, confirmpassword) 
               VALUES (?, ?, ?, ?, ?, '')"; // Empty confirmpassword as we don't store it
     

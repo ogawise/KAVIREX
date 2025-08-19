@@ -101,7 +101,7 @@ if (!empty($_SESSION['cart'])) {
             <div class="cart_total">
                 Total: FCFA <?= number_format($total, 2) ?>
             </div>
-            <div class="cart_summary">
+            <div class="cart_summary">g
                 <span class="cart_count"><?= array_sum($_SESSION['cart'] ?? []) ?></span>
             </div>
             <a href="order_status.php" id="place-order-btn" class="checkout-btn" 

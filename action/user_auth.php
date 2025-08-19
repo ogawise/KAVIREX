@@ -13,12 +13,6 @@ else{
     $email = $_POST["email"];
      $password = $_POST["password"]; 
 
-
-    //     echo "<pre>";
-    //   print_r($_POST);    
-    // echo "<pre>";
-
-    //   exit;
         if( !filter_var($email, FILTER_VALIDATE_EMAIL)){  $queryString = http_build_query([
         "error" => "invalid_email"     ]);
         redirect("../userlogin.php", $queryString);
@@ -61,7 +55,7 @@ if (!password_verify($password, $user['password'])) {
    $_SESSION["password"] =$user['password']; 
   
   
-        redirect("../products.php");
+   redirect("../products.php");
         
         
 

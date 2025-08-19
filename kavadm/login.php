@@ -2,16 +2,17 @@
 session_start();
 require_once '../includes/database.php';
 
-// Debugging output
-error_log("Script accessed: " . date('Y-m-d H:i:s'));
+// Enhanced debugging
+error_log("\n\n=== NEW LOGIN ATTEMPT ===");
+error_log("Time: " . date('Y-m-d H:i:s'));
+error_log("POST data: " . print_r($_POST, true));
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = trim($_POST['username']);
     $password = $_POST['password'];
     
-    error_log("Login attempt for: " . $username);
+    error_log("Attempting login for username: '$username'");
 
-    // Verify credentials
     $stmt = $connection->prepare("SELECT admin_id, password_hash FROM admins WHERE username = ? AND is_active = 1");
     if (!$stmt) {
         error_log("Prepare failed: " . $connection->error);
@@ -28,23 +29,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
     if ($result->num_rows === 1) {
         $admin = $result->fetch_assoc();
-        error_log("Retrieved hash: " . substr($admin['password_hash'], 0, 10) . "...");
+        error_log("Admin found. Full record: " . print_r($admin, true));
+        error_log("Stored hash: " . $admin['password_hash']);
         
         if (password_verify($password, $admin['password_hash'])) {
+            error_log("Password verification SUCCESSFUL");
+            
             $_SESSION['admin_id'] = $admin['admin_id'];
             $_SESSION['is_admin'] = true;
             $_SESSION['login_time'] = time();
-   // Regenerate session ID for security
-            session_regenerate_id(true);
-            
-            error_log("Login success for admin ID: " . $admin['admin_id']);
-            header("Location: dashboard.php");
-            exit;
-            // Inside your login success block:
             $_SESSION['user_agent'] = $_SERVER['HTTP_USER_AGENT'];
             $_SESSION['ip_address'] = $_SERVER['REMOTE_ADDR'];
+            
+            session_regenerate_id(true);
+            
+            error_log("Login successful, redirecting to dashboard");
+            header("Location: dashboard.php");
+            exit;
         } else {
-            error_log("Password verification failed");
+            error_log("Password verification FAILED");
+            error_log("Input password: '$password'");
+            error_log("Hash verification result: " . (password_verify($password, $admin['password_hash']) ? 'true' : 'false'));
             $error = "Invalid credentials";
         }
     } else {
@@ -54,8 +59,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
     $stmt->close();
 }
-
-// Rest of your HTML remains the same
 ?>
 
 <!DOCTYPE html>

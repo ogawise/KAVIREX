@@ -78,7 +78,7 @@ form.addEventListener("submit", function (event) {
       formData.append(field.name, field.input.value);
     });
 
-    // Replace your current fetch().then() block with:
+    
 fetch("user.php", {
   method: "POST",
   headers: { "Content-Type": "application/x-www-form-urlencoded" },
