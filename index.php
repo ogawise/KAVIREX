@@ -7,6 +7,11 @@
     <title>KAVIREX</title>
    <link rel="stylesheet" href="./assets/styles/style.css">
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/logo.png">
+    <style>
+       main .main-index{
+            min-height:100vh;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -23,7 +28,7 @@
             </ul>
         </nav>
     </header>
-    <main class="main_index">
+    <main class="main_index" style="min-height:80vh;">
         <section class="hero">
             <h1>ORDER GAS DELIVER FAST</h1>
             <p id="cta-p2">Get your gas cylinders delivered to your doorstep as soon as posible.</p>
@@ -42,6 +47,19 @@
             <div class="text-c">
                 <h2> Safety Guaranteed</h2>
                 <p>Certified cylinders and contactless delivery for your peace of mind.</p>
+            </div>
+       
+            <div class="text-c">
+                <h2>Pay on Delivery</h2>
+                <p>Make your payment after you have recieved your product for transparency</p>
+            </div>
+            <div class="text-c">
+                <h2>Order Tracking</h2>
+                <p>Trace your order in real time untill it arive your doorstep.</p>
+            </div>
+            <div class="text-c">
+                <h2> Quality</h2>
+                <p>We offer high quality, durable and well filled gas.</p>
             </div>
         </section>
     </main>

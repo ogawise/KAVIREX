@@ -56,7 +56,7 @@ header {
     color: var(--white_smook);
     padding: 1rem;
     box-shadow: var(--box-shadow2);
-    margin: 0 1rem 0 1rem;
+    margin: 0 0rem 0 0rem;
     
     nav{
         display: flex;
@@ -98,7 +98,6 @@ a:hover{
     transform: translateY(-3px);
 }
 .main_index {
- 
      margin: 2rem  ;
 }
 .hero{
@@ -154,8 +153,8 @@ h2{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    row-gap: 1rem;
+    justify-content: space-between; 
+    row-gap: 1rem; 
      :hover{
     transition: all 350ms ease-in-out;
     transform: translateY(-3px);
@@ -169,7 +168,7 @@ h2{
  }
  footer{
   background-color: var(--deep_navy_blue);
-  margin: 0 1rem 0 1rem;
+  margin: 0 0rem 0 0rem;
     
  }
  .footer-content{
@@ -460,8 +459,9 @@ h2{
         font-size: 45px;
     }
      .text-cards{
-    display: flex;
-    flex-direction:row;
+    display: grid;
+   grid-template-columns: auto auto auto;
+    row-gap: 1rem;
     column-gap: 1rem;
     margin-top: 1rem;
    }

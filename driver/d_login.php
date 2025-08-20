@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/styles/d_auth.css">
+     <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/logo.png">
     <script src="../assets/javascript/auth.js" defer></script>
     <title>Login Page</title>
 </head>

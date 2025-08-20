@@ -11,16 +11,11 @@
 <body>
      <main>
 
-        <section style="  height:1000px ; margin: 20px; justify-content:center;align-items:center;" class="driver-content">
+        <section class="driver-content">
                 
          <form class="drivers_form" action="../action/create.php" method="POST"  id="register" enctype="multipart/form-data">
-            
-           
             <h1 > DRIVER REGISTRATION </h1>
-        
-        
-          
-           
+      
          <div  >
              <label for="name" > Name </label>
              <input type="text"  name="name" id="name"

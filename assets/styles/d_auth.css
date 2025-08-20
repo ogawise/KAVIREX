@@ -186,24 +186,21 @@ button:hover{
     /* width: 320px; */
  border-radius: 2rem;
   display: flex;
-  margin: 18px; 
+  margin: 24px; 
  align-items: center;
  justify-content: center;
      
 }
 .drivers_form{
       margin-right:5px;
+      margin-top: 0rem !important;
       padding: 20px;
       text-align: left;
       position: relative;
       box-shadow: 0 8px 24px hsla(215, 49%, 25%, 0.15);
 
 }
-.driver-btn{
-    margin-left: 3.5rem;
-    
-  
-}
+
 #uNerrorMessage,#eAerrorMessage,#aDerrorMessage,#pNerrorMessage,#errorMessage,#dBerrorMessage,#dLerrorMessage{
      font-size: var(--text-base);
     margin-bottom: 0.2rem;
